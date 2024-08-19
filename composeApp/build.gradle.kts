@@ -43,6 +43,12 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+
+            // Navigation PreCompose
+            api("moe.tlaster:precompose:1.5.10")
+
+            // ViewModel
+            api("moe.tlaster:precompose-viewmodel:1.5.10")
         }
         iosMain.dependencies {
 

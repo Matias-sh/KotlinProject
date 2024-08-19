@@ -16,12 +16,15 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import kotlinproject.composeapp.generated.resources.Res
 import kotlinproject.composeapp.generated.resources.compose_multiplatform
+import moe.tlaster.precompose.PreComposeApp
 
 @Composable
 @Preview
 fun App() {
-    Column (modifier = Modifier.fillMaxSize()){
-        Text("Bienvenidos")
-        Text("Curso de Kotlin Multiplataforma con Compose")
+    PreComposeApp {
+        Column(modifier = Modifier.fillMaxSize()) {
+            Text("Bienvenidos")
+            Text("Curso de Kotlin Multiplataforma con Compose")
+        }
     }
 }
