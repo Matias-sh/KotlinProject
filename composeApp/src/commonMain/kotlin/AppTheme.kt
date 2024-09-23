@@ -1,7 +1,6 @@
 import androidx.compose.foundation.shape.AbsoluteCutCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
@@ -21,8 +20,31 @@ fun AppTheme(content: @Composable () -> Unit) {
 }
 
 @Composable
-fun getColorsTheme() {
+fun getColorsTheme(): DarkModeColors {
     val isDarkMode = false
+    val Purple = Color(0xFF6200EE)
+    val ColorExpenseItem = if(isDarkMode) Color(0xFF090808) else Color(0xFFF1F1F1)
+    val BackgroundColor = if(isDarkMode) Color(0xFF1E1C1C) else Color.White
+    val TextColor = if(isDarkMode) Color.White else Color.Black
+    val AddIconColor = if(isDarkMode) Purple else Color.Black
+    val ColorArrowRound = if(isDarkMode) Purple else Color.Gray.copy(alpha = .2f)
 
-    
+    return DarkModeColors(
+        purple = Purple,
+        colorExprenseItem = ColorExpenseItem,
+        backgroundColor = BackgroundColor,
+        textColor = TextColor,
+        addIconColor = AddIconColor,
+        colorArrowRound = ColorArrowRound
+    )
+
 }
+
+data class DarkModeColors(
+    val purple: Color,
+    val colorExprenseItem: Color,
+    val backgroundColor: Color,
+    val textColor: Color,
+    val addIconColor: Color,
+    val colorArrowRound: Color
+)
